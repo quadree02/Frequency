@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+class Freq
+{
+    private String sent; 
+    public void Freq()
+    {
+        sent="";
+    }
+    public void get()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a sentence : ");
+        sent=sc.nextLine();
+    }
+    public void count()
+    {
+        System.out.println(sent);
+        int l=sent.length();
+        sent=sent.toLowerCase();
+        System.out.println("Alphabet        Frequency");
+        int count=0;
+        for(char i='a';i<='z';i++)
+        {
+            count=0;
+            for(int j=0;j<l;j++)
+            {
+                char ch=sent.charAt(j);
+                if(ch==i)
+                {
+                  count++;
+                }
+            }
+            if(count!=0)
+            {
+                System.out.println(i+"         "+count);
+            }
+        }
+    }
+
+    public static void main()
+    {
+        System.out.println("Frequency of letters");
+        Freq obj=new Freq();
+        obj.get();
+        obj.count();
+    }
+}
